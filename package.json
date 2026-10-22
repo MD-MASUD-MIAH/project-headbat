@@ -1,0 +1,17 @@
+{
+  "name": "project-headbat-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HeadBat Full Stack Application - Dynamic Website & Admin Dashboard",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd headbat-v1 && npm run dev",
+    "start": "node server/src/server.js",
+    "build": "cd headbat-v1 && npm run build",
+    "install:all": "npm install && cd headbat-v1 && npm install && cd ../server && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
