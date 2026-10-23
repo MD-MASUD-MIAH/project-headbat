@@ -87,20 +87,42 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start Server and connect to DB
+// Middleware to ensure DB is connected in serverless environments (Vercel)
+let isDbInitialized = false;
+app.use(async (req, res, next) => {
+  if (!isDbInitialized) {
+    try {
+      const connected = await connectDB();
+      if (connected) {
+        await seedDatabase();
+      }
+      isDbInitialized = true;
+    } catch (e) {
+      console.warn("[Serverless DB Init Warning]:", e.message);
+    }
+  }
+  next();
+});
+
+// Start Server locally
 const startServer = async () => {
   const connected = await connectDB();
   if (connected) {
     await seedDatabase();
   }
+  isDbInitialized = true;
 
   app.listen(PORT, () => {
     console.log(`===============================================`);
-    console.log(`🚀 HeadBat Server running on http://localhost:${PORT}`);
-    console.log(`📡 API Health: http://localhost:${PORT}/api/health`);
-    console.log(`🗄️  MongoDB URI: ${process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/headbat"}`);
+    console.log(`HeadBat Server running on http://localhost:${PORT}`);
+    console.log(`API Health: http://localhost:${PORT}/api/health`);
+    console.log(`MongoDB URI: ${process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/headbat"}`);
     console.log(`===============================================`);
   });
 };
 
-startServer();
+if (!process.env.VERCEL) {
+  startServer();
+}
+
+export default app;
