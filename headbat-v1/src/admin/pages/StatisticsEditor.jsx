@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Save, RotateCcw, BarChart3, Plus, Trash2, Info } from "lucide-react";
+import { Save, RotateCcw, Plus, Trash2, Info } from "lucide-react";
 import { useContent } from "../../context/ContentContext";
 import api from "../../services/api";
 import Toast from "../components/Toast";
@@ -125,8 +125,7 @@ export default function StatisticsEditor() {
         <div className="bg-[#141416] border border-white/10 rounded-2xl p-6 space-y-5">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-base font-semibold text-white flex items-center gap-2">
-                <BarChart3 className="w-4 h-4 text-orange-400" />
+              <h2 className="text-base font-semibold text-white">
                 Animated Stat Cards ({formData.items.length})
               </h2>
               <p className="text-xs text-neutral-400 mt-0.5">

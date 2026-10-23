@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Save, RotateCcw, Layers } from "lucide-react";
+import { Save, RotateCcw } from "lucide-react";
 import { useContent } from "../../context/ContentContext";
 import api from "../../services/api";
 import MediaUploader from "../components/MediaUploader";
@@ -73,8 +73,8 @@ export default function WhyChooseUsEditor() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-            <Layers className="w-5 h-5 text-amber-300" /> Why Choose Us Section
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            Why Choose Us Section
           </h1>
           <p className="text-xs text-neutral-400 mt-1">
             Edit pitch statements, video mockup, and stat cards.

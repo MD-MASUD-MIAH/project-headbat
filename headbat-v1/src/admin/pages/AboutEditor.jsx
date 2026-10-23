@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Save, RotateCcw, Video, Plus, Trash2, Info } from "lucide-react";
+import { Save, RotateCcw, Plus, Trash2 } from "lucide-react";
 import { useContent } from "../../context/ContentContext";
 import api from "../../services/api";
 import MediaUploader from "../components/MediaUploader";
@@ -130,8 +130,7 @@ export default function AboutEditor() {
       <form onSubmit={handleSave} className="space-y-6">
         {/* Headings & Narrative */}
         <div className="bg-[#141416] border border-white/10 rounded-2xl p-6 space-y-5">
-          <h2 className="text-base font-semibold text-white flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-orange-400"></span>
+          <h2 className="text-base font-semibold text-white">
             Headings & Narrative
           </h2>
 
@@ -195,8 +194,7 @@ export default function AboutEditor() {
 
         {/* Video Showcase Asset */}
         <div className="bg-[#141416] border border-white/10 rounded-2xl p-6 space-y-4">
-          <h2 className="text-base font-semibold text-white flex items-center gap-2">
-            <Video className="w-4 h-4 text-orange-400" />
+          <h2 className="text-base font-semibold text-white">
             Showcase Video
           </h2>
           <MediaUploader

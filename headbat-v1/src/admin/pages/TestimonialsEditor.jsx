@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Save, RotateCcw, Plus, Trash2, Star, MessageSquare } from "lucide-react";
+import { Save, RotateCcw, Plus, Trash2 } from "lucide-react";
 import { useContent } from "../../context/ContentContext";
 import api from "../../services/api";
 import MediaUploader from "../components/MediaUploader";
@@ -174,8 +174,7 @@ export default function TestimonialsEditor() {
 
         {/* Clutch Showcase Card */}
         <div className="bg-[#141416] border border-white/10 rounded-2xl p-6 space-y-4">
-          <h2 className="text-base font-semibold text-white flex items-center gap-2">
-            <Star className="w-4 h-4 text-orange-400 fill-orange-400" />
+          <h2 className="text-base font-semibold text-white">
             Clutch Credential Card
           </h2>
 
@@ -274,8 +273,7 @@ export default function TestimonialsEditor() {
         <div className="bg-[#141416] border border-white/10 rounded-2xl p-6 space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-base font-semibold text-white flex items-center gap-2">
-                <MessageSquare className="w-4 h-4 text-orange-400" />
+              <h2 className="text-base font-semibold text-white">
                 Client Testimonials ({formData.reviews.length})
               </h2>
               <p className="text-xs text-neutral-400 mt-0.5">

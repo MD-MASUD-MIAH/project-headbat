@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Save, Plus, Trash2, RotateCcw, Award } from "lucide-react";
+import { Save, Plus, Trash2, RotateCcw } from "lucide-react";
 import { useContent } from "../../context/ContentContext";
 import api from "../../services/api";
 import MediaUploader from "../components/MediaUploader";
@@ -83,8 +83,8 @@ export default function ClientsEditor() {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-            <Award className="w-5 h-5 text-indigo-400" /> Clients Logos Editor
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            Clients Logos Editor
           </h1>
           <p className="text-xs text-neutral-400 mt-1">
             Manage the client brand logos and heading on the home page.

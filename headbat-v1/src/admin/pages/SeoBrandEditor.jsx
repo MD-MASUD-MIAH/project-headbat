@@ -1,13 +1,8 @@
 import { useState, useEffect } from "react";
 import {
-  Globe,
   Save,
   RotateCcw,
-  Search,
-  Image as ImageIcon,
-  Share2,
   Info,
-  CheckCircle,
 } from "lucide-react";
 import { useContent } from "../../context/ContentContext";
 import api from "../../services/api";
@@ -108,8 +103,8 @@ export default function SeoBrandEditor() {
       {/* Header Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-            <Globe className="w-5 h-5 text-indigo-400" /> SEO & Brand Identity
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            SEO & Brand Identity
           </h1>
           <p className="text-xs text-neutral-400 mt-1">
             Manage browser tab title, Google search description, favicon icon,
@@ -141,12 +136,9 @@ export default function SeoBrandEditor() {
       <form onSubmit={handleSave} className="space-y-6">
         {/* Brand Name & Logos */}
         <div className="bg-[#111216] p-6 rounded-2xl border border-white/10 space-y-5">
-          <div className="flex items-center gap-2">
-            <ImageIcon className="w-4 h-4 text-orange-400" />
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-neutral-200">
-              Brand Identity & Logos
-            </h2>
-          </div>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-neutral-200">
+            Brand Identity & Logos
+          </h2>
 
           <div>
             <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-300 mb-1.5">
@@ -226,12 +218,9 @@ export default function SeoBrandEditor() {
 
         {/* Search Engine Optimization (SEO) */}
         <div className="bg-[#111216] p-6 rounded-2xl border border-white/10 space-y-5">
-          <div className="flex items-center gap-2">
-            <Search className="w-4 h-4 text-emerald-400" />
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-neutral-200">
-              Search Engine Optimization (SEO)
-            </h2>
-          </div>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-neutral-200">
+            Search Engine Optimization (SEO)
+          </h2>
 
           <div>
             <div className="flex items-center justify-between mb-1.5">
@@ -300,12 +289,9 @@ export default function SeoBrandEditor() {
 
         {/* Social Sharing & OpenGraph */}
         <div className="bg-[#111216] p-6 rounded-2xl border border-white/10 space-y-4">
-          <div className="flex items-center gap-2">
-            <Share2 className="w-4 h-4 text-sky-400" />
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-neutral-200">
-              Social Media Preview (OpenGraph Banner)
-            </h2>
-          </div>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-neutral-200">
+            Social Media Preview (OpenGraph Banner)
+          </h2>
 
           <MediaUploader
             label="Social Share Image (OG Image)"
@@ -318,8 +304,7 @@ export default function SeoBrandEditor() {
 
         {/* Real-time Google Search & Tab Preview */}
         <div className="bg-[#111216] p-6 rounded-2xl border border-white/10 space-y-4">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-neutral-200 flex items-center gap-2">
-            <CheckCircle className="w-4 h-4 text-emerald-400" />
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-neutral-200">
             Live Search & Browser Preview
           </h2>
 

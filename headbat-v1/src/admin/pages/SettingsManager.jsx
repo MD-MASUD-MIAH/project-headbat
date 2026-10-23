@@ -1,14 +1,6 @@
 import { useState, useEffect } from "react";
 import {
-  Settings,
-  Shield,
-  Key,
-  Database,
-  User,
   RotateCcw,
-  CheckCircle2,
-  AlertTriangle,
-  Server,
 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import { useContent } from "../../context/ContentContext";
@@ -170,8 +162,7 @@ export default function SettingsManager() {
       {toast && <Toast toast={toast} onClose={() => setToast(null)} />}
 
       <div className="pb-5 border-b border-white/10">
-        <h1 className="text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
-          <Settings className="w-6 h-6 text-orange-400" />
+        <h1 className="text-2xl font-bold text-white tracking-tight">
           Settings & Account
         </h1>
         <p className="text-sm text-neutral-400 mt-1">
@@ -181,8 +172,7 @@ export default function SettingsManager() {
 
       {/* System Health / MongoDB Status */}
       <div className="bg-[#141416] border border-white/10 rounded-2xl p-6 space-y-4">
-        <h2 className="text-base font-semibold text-white flex items-center gap-2">
-          <Server className="w-4 h-4 text-orange-400" />
+        <h2 className="text-base font-semibold text-white">
           System & Database Connection
         </h2>
 
@@ -239,8 +229,7 @@ export default function SettingsManager() {
         onSubmit={handleUpdateProfile}
         className="bg-[#141416] border border-white/10 rounded-2xl p-6 space-y-4"
       >
-        <h2 className="text-base font-semibold text-white flex items-center gap-2">
-          <User className="w-4 h-4 text-orange-400" />
+        <h2 className="text-base font-semibold text-white">
           Admin Profile Details
         </h2>
 
@@ -291,8 +280,7 @@ export default function SettingsManager() {
         onSubmit={handleChangePassword}
         className="bg-[#141416] border border-white/10 rounded-2xl p-6 space-y-4"
       >
-        <h2 className="text-base font-semibold text-white flex items-center gap-2">
-          <Key className="w-4 h-4 text-orange-400" />
+        <h2 className="text-base font-semibold text-white">
           Change Password
         </h2>
 
@@ -364,10 +352,7 @@ export default function SettingsManager() {
 
       {/* Danger Zone: Full Content Reset */}
       <div className="p-6 rounded-2xl bg-red-950/20 border border-red-500/20 space-y-4">
-        <div className="flex items-center gap-3">
-          <AlertTriangle className="w-5 h-5 text-red-400" />
-          <h2 className="text-base font-semibold text-white">Reset All Content</h2>
-        </div>
+        <h2 className="text-base font-semibold text-white">Reset All Content</h2>
         <p className="text-xs text-neutral-400 leading-relaxed max-w-2xl">
           Reset all sections (Hero, Clients, Services, About Us, Testimonials, Stats, Team, FAQ, and Footer) back to their original factory defaults. This action cannot be undone.
         </p>

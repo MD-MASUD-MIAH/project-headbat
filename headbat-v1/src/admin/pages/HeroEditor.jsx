@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Save, RotateCcw, Plus, Trash2, CheckCircle2, Sparkles } from "lucide-react";
+import { Save, RotateCcw, Plus, Trash2, CheckCircle2 } from "lucide-react";
 import { useContent } from "../../context/ContentContext";
 import api from "../../services/api";
 import MediaUploader from "../components/MediaUploader";
@@ -90,8 +90,8 @@ export default function HeroEditor() {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-amber-300" /> Hero Section Editor
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            Hero Section Editor
           </h1>
           <p className="text-xs text-neutral-400 mt-1">
             Update the main hero title, taglines, stats metrics, and background video.

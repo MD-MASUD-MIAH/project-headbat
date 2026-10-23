@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  Briefcase,
   Plus,
   Edit2,
   Trash2,
@@ -122,8 +121,8 @@ export default function ProjectsEditor() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-            <Briefcase className="w-5 h-5 text-indigo-400" /> Featured Projects & Case Studies
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            Featured Projects & Case Studies
           </h1>
           <p className="text-xs text-neutral-400 mt-1">
             Create, edit, or remove featured portfolio items and detailed case study pages.

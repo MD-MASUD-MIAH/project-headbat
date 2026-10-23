@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Save, Plus, Trash2, RotateCcw, Sliders } from "lucide-react";
+import { Save, Plus, Trash2, RotateCcw } from "lucide-react";
 import { useContent } from "../../context/ContentContext";
 import api from "../../services/api";
 import Toast from "../components/Toast";
@@ -98,8 +98,8 @@ export default function ServicesEditor() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-            <Sliders className="w-5 h-5 text-indigo-400" /> Services Section Editor
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            Services Section Editor
           </h1>
           <p className="text-xs text-neutral-400 mt-1">
             Manage the interactive expandable accordion services and category tags.
