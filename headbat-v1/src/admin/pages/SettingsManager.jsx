@@ -49,22 +49,29 @@ export default function SettingsManager() {
     }
 
     // Check system health
-    api
-      .getHealth()
-      .then((data) => {
-        setSystemHealth({
-          status: data.status || "ok",
-          database: data.database || "connected",
-          uptime: data.uptime || 0,
+    const healthFn = api.getHealth || api.checkHealth;
+    if (typeof healthFn === "function") {
+      healthFn()
+        .then((data) => {
+          const dbStatus =
+            typeof data?.database === "object" && data.database !== null
+              ? data.database.status || (data.database.connected ? "connected" : "disconnected")
+              : data?.database || "connected";
+
+          setSystemHealth({
+            status: data?.status || "ok",
+            database: String(dbStatus),
+            uptime: data?.uptime || 0,
+          });
+        })
+        .catch(() => {
+          setSystemHealth({
+            status: "offline",
+            database: "disconnected",
+            uptime: 0,
+          });
         });
-      })
-      .catch(() => {
-        setSystemHealth({
-          status: "offline",
-          database: "disconnected",
-          uptime: 0,
-        });
-      });
+    }
   }, [user]);
 
   const handleUpdateProfile = async (e) => {
@@ -220,8 +227,8 @@ export default function SettingsManager() {
             <span className="text-xs text-neutral-500 font-medium uppercase tracking-wider">
               API Base Route
             </span>
-            <p className="text-xs font-mono text-neutral-300 pt-1">
-              http://localhost:5000/api
+            <p className="text-xs font-mono text-neutral-300 pt-1 truncate">
+              {import.meta.env.VITE_API_URL || "/api"}
             </p>
           </div>
         </div>

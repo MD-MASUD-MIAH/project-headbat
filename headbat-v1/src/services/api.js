@@ -104,11 +104,16 @@ export const api = {
       body: JSON.stringify({ email, password }),
     }),
   getMe: () => request("/auth/me"),
-  changePassword: (currentPassword, newPassword) =>
-    request("/auth/change-password", {
+  changePassword: (currentPassword, newPassword) => {
+    const payload =
+      typeof currentPassword === "object" && currentPassword !== null
+        ? currentPassword
+        : { currentPassword, newPassword };
+    return request("/auth/change-password", {
       method: "PUT",
-      body: JSON.stringify({ currentPassword, newPassword }),
-    }),
+      body: JSON.stringify(payload),
+    });
+  },
   updateProfile: (profileData) =>
     request("/auth/profile", {
       method: "PUT",
@@ -116,6 +121,7 @@ export const api = {
     }),
 
   // Health check
+  getHealth: () => request("/health"),
   checkHealth: () => request("/health"),
 };
 
